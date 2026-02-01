@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52b788"/>
+      <stop offset="100%" stop-color="#2d8b5e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="30" cy="30" r="26" fill="url(#lg2)"/>
+  <text x="30" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white">0</text>
+  <text x="30" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="white" opacity="0.9">CAL</text>
+</svg>

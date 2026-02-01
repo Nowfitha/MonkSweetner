@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="lg9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0c060"/>
+      <stop offset="100%" stop-color="#e0a030"/>
+    </linearGradient>
+  </defs>
+  <circle cx="30" cy="30" r="26" fill="url(#lg9)"/>
+  <!-- Tongue / taste waves -->
+  <path d="M18,28 Q22,22 26,28 Q30,34 34,28 Q38,22 42,28" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <!-- Stars for "very sweet" -->
+  <polygon points="22,40 23.5,43 27,43 24.5,45 25.5,48 22,46 18.5,48 19.5,45 17,43 20.5,43" fill="white" opacity="0.8"/>
+  <polygon points="38,40 39,42 41.5,42 39.5,43.5 40.2,46 38,44.5 35.8,46 36.5,43.5 34.5,42 37,42" fill="white" opacity="0.6"/>
+</svg>

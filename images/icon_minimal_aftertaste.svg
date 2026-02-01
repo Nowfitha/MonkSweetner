@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <defs>
+    <linearGradient id="lg11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6cc88a"/>
+      <stop offset="100%" stop-color="#4aaa6a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="30" cy="30" r="26" fill="url(#lg11)"/>
+  <!-- Slight smile -->
+  <path d="M21,34 Q30,38 39,34" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="22" cy="26" r="2" fill="white"/>
+  <circle cx="38" cy="26" r="2" fill="white"/>
+  <!-- Tilde for "minimal" -->
+  <path d="M26,18 Q30,15 34,18" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+</svg>

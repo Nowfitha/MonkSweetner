@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="fruitGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#8fbc5e"/>
+      <stop offset="60%" stop-color="#5a8a2f"/>
+      <stop offset="100%" stop-color="#3d6b1e"/>
+    </radialGradient>
+    <radialGradient id="fruitGrad2" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#a3d46f"/>
+      <stop offset="60%" stop-color="#6ba33a"/>
+      <stop offset="100%" stop-color="#4a7a25"/>
+    </radialGradient>
+    <radialGradient id="leafGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#7db84a"/>
+      <stop offset="100%" stop-color="#3a6e1a"/>
+    </radialGradient>
+  </defs>
+  <!-- Background circle (subtle) -->
+  <circle cx="200" cy="200" r="180" fill="#f0f7ec" opacity="0.5"/>
+  
+  <!-- Main large monk fruit -->
+  <ellipse cx="200" cy="220" rx="85" ry="90" fill="url(#fruitGrad)"/>
+  <!-- Surface texture lines -->
+  <ellipse cx="200" cy="220" rx="85" ry="90" fill="none" stroke="#4a7a25" stroke-width="0.8" opacity="0.3"/>
+  <path d="M130,180 Q200,170 270,185" fill="none" stroke="#4a7a25" stroke-width="0.6" opacity="0.25"/>
+  <path d="M125,205 Q200,195 275,208" fill="none" stroke="#4a7a25" stroke-width="0.6" opacity="0.25"/>
+  <path d="M128,230 Q200,220 272,233" fill="none" stroke="#4a7a25" stroke-width="0.6" opacity="0.25"/>
+  <path d="M135,255 Q200,247 265,258" fill="none" stroke="#4a7a25" stroke-width="0.6" opacity="0.25"/>
+  <!-- Highlight -->
+  <ellipse cx="175" cy="195" rx="25" ry="30" fill="white" opacity="0.12"/>
+
+  <!-- Stem -->
+  <path d="M200,133 Q205,115 210,100" fill="none" stroke="#5a7a30" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Main leaf top right -->
+  <g transform="rotate(-20, 210, 100)">
+    <path d="M210,100 Q240,70 270,85 Q250,110 210,100Z" fill="url(#leafGrad)"/>
+    <path d="M210,100 Q240,88 265,90" fill="none" stroke="#2d5a10" stroke-width="0.8" opacity="0.4"/>
+  </g>
+  
+  <!-- Leaf top left -->
+  <g transform="rotate(25, 195, 105)">
+    <path d="M195,105 Q165,75 138,88 Q158,115 195,105Z" fill="url(#leafGrad)" opacity="0.9"/>
+    <path d="M195,105 Q165,92 142,92" fill="none" stroke="#2d5a10" stroke-width="0.8" opacity="0.4"/>
+  </g>
+
+  <!-- Small monk fruit left -->
+  <ellipse cx="100" cy="270" rx="42" ry="45" fill="url(#fruitGrad2)"/>
+  <ellipse cx="85" cy="255" rx="10" ry="14" fill="white" opacity="0.1"/>
+  <path d="M100,227 Q103,215 105,208" fill="none" stroke="#5a7a30" stroke-width="3" stroke-linecap="round"/>
+  <path d="M105,208 Q120,195 135,200 Q125,212 105,208Z" fill="url(#leafGrad)" opacity="0.85"/>
+
+  <!-- Small monk fruit right -->
+  <ellipse cx="300" cy="260" rx="38" ry="40" fill="url(#fruitGrad)" opacity="0.85"/>
+  <ellipse cx="287" cy="248" rx="9" ry="12" fill="white" opacity="0.1"/>
+  <path d="M300,222 Q302,212 304,205" fill="none" stroke="#5a7a30" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M304,205 Q318,194 330,198 Q322,208 304,205Z" fill="url(#leafGrad)" opacity="0.8"/>
+  
+  <!-- Scattered leaves -->
+  <path d="M60,150 Q80,130 100,142 Q82,160 60,150Z" fill="url(#leafGrad)" opacity="0.6"/>
+  <path d="M320,150 Q340,135 355,148 Q338,162 320,150Z" fill="url(#leafGrad)" opacity="0.55"/>
+</svg>

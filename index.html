@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OrgiPro – Pure Monk Fruit Sweetener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM
+   ============================================================ */
+:root {
+  --green-deep:    #1e3d1a;
+  --green-rich:    #2d5a27;
+  --green-mid:     #3d7a35;
+  --green-light:   #5ca64e;
+  --green-soft:    #a8d5a2;
+  --green-cream:   #f4faf0;
+  --green-pale:    #e6f2e3;
+  --earth-warm:    #6b4c3a;
+  --earth-light:   #8c6e57;
+  --gold:          #c9a84c;
+  --gold-light:    #e2cfa0;
+  --rust:          #b85c38;
+  --cream:         #faf7f2;
+  --white:         #ffffff;
+  --text-dark:     #1a1a18;
+  --text-mid:      #4a4a44;
+  --text-light:    #7a7a70;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   24px;
+  --radius-xl:   40px;
+
+  --shadow-card: 0 4px 24px rgba(30,61,26,0.08);
+  --shadow-hover: 0 8px 40px rgba(30,61,26,0.16);
+  --transition: 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.container {
+  width: 90%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--green-mid);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--green-deep);
+}
+.section-title em { font-style: italic; color: var(--green-mid); }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  background: rgba(250,247,242,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45,90,39,0.08);
+  transition: var(--transition);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+.nav-links a:hover { color: var(--green-deep); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--green-deep);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav-cta:hover { background: var(--green-rich); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--green-deep);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/monkfruit.png") center/cover no-repeat;
+  opacity: 0.22;
+  filter: saturate(1.3);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30,61,26,0.88) 0%,
+    rgba(30,61,26,0.60) 45%,
+    rgba(30,61,26,0.30) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 140px 0 100px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-text .section-label { color: var(--gold-light); }
+.hero-text .section-title { color: var(--white); font-size: clamp(2.6rem, 5.5vw, 4rem); }
+.hero-text .section-title em { color: var(--green-soft); }
+.hero-text p {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 480px;
+  margin-top: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.hero-buttons { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold);
+  color: var(--green-deep);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  border: none; cursor: pointer;
+  transition: var(--transition);
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--white);
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.88rem;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+.hero-badges {
+  display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;
+}
+.hero-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green-soft);
+}
+.hero-badge span {
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ============================================================
+   WHY ORGIPRO
+   ============================================================ */
+.why {
+  padding: 110px 0;
+  background: var(--cream);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+.why-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  border: 1px solid rgba(45,90,39,0.07);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-mid), var(--green-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.why-card:hover::before { transform: scaleX(1); }
+.why-icon {
+  width: 52px; height: 52px;
+  background: var(--green-pale);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 22px;
+}
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 10px;
+}
+.why-card p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   COMPARISON TABLE
+   ============================================================ */
+.compare {
+  padding: 110px 0;
+  background: var(--green-pale);
+}
+.compare .section-title { text-align: center; }
+.compare .section-label { display: block; text-align: center; }
+.compare-table {
+  margin-top: 60px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(45,90,39,0.06);
+}
+.compare-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  background: var(--green-deep);
+  color: var(--white);
+}
+.compare-head div {
+  padding: 22px 20px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+.compare-head div:first-child { text-align: left; color: var(--green-soft); }
+.compare-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(45,90,39,0.06);
+  transition: background var(--transition);
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-row:hover { background: var(--green-pale); }
+.compare-row div {
+  padding: 18px 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-mid);
+}
+.compare-row div:first-child { text-align: left; font-weight: 500; color: var(--text-dark); }
+.check { color: var(--green-mid); font-weight: 700; font-size: 1.1rem; }
+.cross { color: #c0392b; font-weight: 700; font-size: 1.1rem; }
+.highlight-col { background: rgba(168,213,162,0.12); }
+
+/* ============================================================
+   SCIENCE
+   ============================================================ */
+.science {
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+.science-bg-strip {
+  position: absolute;
+  right: -60px;
+  top: 0; bottom: 0;
+  width: 48%;
+  background: url("images/monktree.jpg") center/cover no-repeat;
+  opacity: 0.18;
+  filter: saturate(1.5) brightness(0.85);
+}
+.science-overlay-strip {
+  position: absolute;
+  right: -60px;
+  top: 0; bottom: 0;
+  width: 48%;
+  background: linear-gradient(to right, var(--cream) 0%, transparent 35%);
+}
+.science-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.science-text p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-top: 18px;
+}
+.science-list { margin-top: 28px; }
+.science-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(45,90,39,0.07);
+  font-size: 0.88rem;
+  color: var(--text-mid);
+}
+.science-list li:last-child { border-bottom: none; }
+.science-list-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: var(--green-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-mid);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+.science-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.science-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(45,90,39,0.06);
+  transition: var(--transition);
+}
+.science-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.science-card-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 12px;
+}
+.science-card-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+.science-card-icon.green { background: var(--green-pale); }
+.science-card-icon.gold { background: rgba(201,168,76,0.12); }
+.science-card-icon.earth { background: rgba(107,76,58,0.1); }
+.science-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green-deep);
+}
+.science-card p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PRODUCTS – UNIQUE IMAGE STYLES
+   ============================================================ */
+.products {
+  padding: 110px 0;
+  position: relative;
+  background: var(--green-deep);
+  overflow: hidden;
+}
+.products-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/monk3.jpg") center/cover no-repeat;
+  opacity: 0.14;
+  filter: saturate(1.4) brightness(0.7);
+}
+.products-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30,61,26,0.92) 0%, rgba(30,61,26,0.75) 50%, rgba(30,61,26,0.92) 100%);
+}
+.products-content {
+  position: relative;
+  z-index: 2;
+}
+.products .section-label { color: var(--gold-light); display: block; text-align: center; }
+.products .section-title { color: var(--white); text-align: center; }
+.products .section-title em { color: var(--green-soft); }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+}
+.product-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.25); border-color: rgba(255,255,255,0.22); }
+
+/* ─── BASE product-image container ─── */
+.product-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-image img {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARD 1 – Tea Blend: Warm circular frame with radial glow
+   ═══════════════════════════════════════════════════════════ */
+.product-image.style-tea {
+  background: linear-gradient(145deg, #1a2e18 0%, #0f1c0d 100%);
+}
+/* Outer soft radial glow */
+.product-image.style-tea::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.22) 0%, rgba(30,61,26,0.0) 68%);
+  z-index: 1;
+}
+/* Circular clipping mask ring */
+.product-image.style-tea::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px; height: 170px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.35);
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.08),
+    inset 0 0 40px rgba(201,168,76,0.06);
+  z-index: 1;
+  pointer-events: none;
+}
+.product-image.style-tea img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+/* Floating leaf accent */
+.product-image.style-tea .accent-leaf {
+  position: absolute;
+  top: 18px; right: 22px;
+  font-size: 1.4rem;
+  opacity: 0.45;
+  z-index: 3;
+  animation: leafDrift 4s ease-in-out infinite;
+}
+@keyframes leafDrift {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50%      { transform: rotate(4deg) translateY(-5px); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARD 2 – Golden Brown Blend: Diagonal split with gold accent stripe
+   ═══════════════════════════════════════════════════════════ */
+.product-image.style-golden {
+  background: #1a1810;
+}
+/* Diagonal gold stripe */
+.product-image.style-golden::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: -10%;
+  width: 55%; height: 200%;
+  background: linear-gradient(
+    160deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(201,168,76,0.18) 42%,
+    rgba(201,168,76,0.28) 48%,
+    transparent 48%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+/* Right-side dark gradient overlay for depth */
+.product-image.style-golden::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 40%, rgba(10,8,4,0.55) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.product-image.style-golden img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* Gold corner accent line – top-right */
+.product-image.style-golden .accent-corner {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 40px; height: 40px;
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  z-index: 3;
+  opacity: 0.7;
+}
+/* Gold corner accent line – bottom-left */
+.product-image.style-golden .accent-corner-bl {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  width: 40px; height: 40px;
+  border-bottom: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  z-index: 3;
+  opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARD 3 – Pure Granulated: Clean arch/arch-window frame
+   ═══════════════════════════════════════════════════════════ */
+.product-image.style-pure {
+  background: linear-gradient(180deg, #edf5ea 0%, #dff0d8 100%);
+  padding: 20px;
+}
+/* Arch window clipping */
+.product-image.style-pure .arch-frame {
+  position: relative;
+  z-index: 2;
+  width: 140px;
+  height: 170px;
+  border-radius: 70px 70px 12px 12px;
+  overflow: hidden;
+  border: 2.5px solid rgba(45,90,39,0.22);
+  box-shadow:
+    0 6px 24px rgba(45,90,39,0.14),
+    inset 0 0 0 4px rgba(255,255,255,0.6);
+}
+.product-image.style-pure .arch-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Decorative dots pattern */
+.product-image.style-pure .dots {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(45,90,39,0.12) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  background-position: 10px 10px;
+}
+/* Small green accent circle */
+.product-image.style-pure .accent-dot {
+  position: absolute;
+  bottom: 28px; right: 30px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+  z-index: 3;
+  box-shadow: 0 3px 10px rgba(45,90,39,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARD 4 – Liquid Drops: Dark cinematic with amber light-ray
+   ═══════════════════════════════════════════════════════════ */
+.product-image.style-liquid {
+  background: #0a0906;
+}
+/* Amber light ray from top-left */
+.product-image.style-liquid::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -20px;
+  width: 60%; height: 100%;
+  background: linear-gradient(
+    145deg,
+    rgba(180,120,40,0.0) 0%,
+    rgba(180,120,40,0.15) 30%,
+    rgba(180,120,40,0.08) 60%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+/* Bottom dark vignette */
+.product-image.style-liquid::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.product-image.style-liquid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  filter: brightness(0.85) contrast(1.1);
+}
+/* Thin amber border frame inset */
+.product-image.style-liquid .frame-inset {
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(180,120,40,0.25);
+  z-index: 3;
+  pointer-events: none;
+}
+/* Small amber dot accent */
+.product-image.style-liquid .accent-glow {
+  position: absolute;
+  top: 22px; right: 22px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #d4944a;
+  box-shadow: 0 0 10px 3px rgba(212,148,74,0.4);
+  z-index: 4;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px 3px rgba(212,148,74,0.4); }
+  50%      { box-shadow: 0 0 18px 6px rgba(212,148,74,0.6); }
+}
+
+/* ─── Product info shared ─── */
+.product-info { padding: 30px 28px 32px; }
+.product-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  background: rgba(201,168,76,0.12);
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+.product-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.product-info p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--green-soft);
+}
+.product-price span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+.product-btn {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  background: transparent;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.product-btn:hover { background: var(--white); color: var(--green-deep); border-color: var(--white); }
+
+/* ============================================================
+   BENEFITS
+   ============================================================ */
+.benefits {
+  padding: 110px 0;
+  background: var(--white);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+.benefits-list { display: flex; flex-direction: column; gap: 28px; }
+.benefit-item {
+  display: flex; gap: 20px; align-items: flex-start;
+}
+.benefit-number {
+  flex-shrink: 0;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-mid);
+}
+.benefit-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 4px;
+}
+.benefit-item p {
+  font-size: 0.84rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.benefits-visual {
+  position: relative;
+  background: var(--green-pale);
+  border-radius: var(--radius-xl);
+  padding: 50px 40px;
+  text-align: center;
+}
+.benefits-visual-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--green-deep);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.benefits-ring {
+  width: 180px; height: 180px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+.benefits-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.benefits-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.benefits-ring-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1;
+}
+.benefits-ring-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+.benefits-facts { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.benefit-fact { text-align: center; }
+.benefit-fact-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-mid);
+}
+.benefit-fact-label {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 3px;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how {
+  padding: 110px 0;
+  background: var(--cream);
+}
+.how .section-label { display: block; text-align: center; }
+.how .section-title { text-align: center; }
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+.how-steps::before {
+  content: '';
+  position: absolute;
+  top: 36px; left: 16.66%; right: 16.66%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green-soft), var(--gold), var(--green-soft));
+  z-index: 0;
+}
+.how-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.how-step-circle {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--green-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  box-shadow: 0 4px 16px rgba(45,90,39,0.12);
+}
+.how-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 8px;
+}
+.how-step p {
+  font-size: 0.83rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials {
+  padding: 110px 0;
+  background: var(--green-pale);
+}
+.testimonials .section-label { display: block; text-align: center; }
+.testimonials .section-title { text-align: center; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(45,90,39,0.05);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.testimonial-card blockquote {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 22px;
+}
+.testimonial-author {
+  display: flex; align-items: center; gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--green-mid);
+}
+.testimonial-author-info h5 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.testimonial-author-info span {
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--green-rich);
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/monktree.jpg") center/cover no-repeat;
+  opacity: 0.15;
+  filter: saturate(1.6) brightness(0.7);
+}
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45,90,39,0.90), rgba(30,61,26,0.75));
+}
+.cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto;
+}
+.cta .section-label { color: var(--gold-light); display: block; text-align: center; }
+.cta .section-title { color: var(--white); }
+.cta .section-title em { color: var(--green-soft); }
+.cta p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 18px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.cta-buttons { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta .btn-primary { background: var(--gold); color: var(--green-deep); }
+.cta .btn-outline { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--green-deep);
+  color: rgba(255,255,255,0.6);
+  padding: 70px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-brand .logo { color: var(--white); margin-bottom: 16px; display: block; }
+.footer-brand p {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  max-width: 260px;
+}
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  transition: color var(--transition);
+}
+.footer-col a:hover { color: var(--green-soft); }
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim { opacity: 0; animation: fadeInUp 0.7s cubic-bezier(.4,0,.2,1) forwards; }
+.anim-d1 { animation-delay: 0.1s; }
+.anim-d2 { animation-delay: 0.25s; }
+.anim-d3 { animation-delay: 0.4s; }
+.anim-d4 { animation-delay: 0.55s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-text p { max-width: 100%; }
+  .hero-buttons { justify-content: center; }
+  .hero-badges { justify-content: center; }
+  .hero-visual { justify-content: center; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .compare-head, .compare-row { grid-template-columns: 1.5fr 1fr 1fr; }
+  .compare-head div:last-child, .compare-row div:last-child { display: none; }
+  .science-grid { grid-template-columns: 1fr; gap: 50px; }
+  .science-bg-strip { display: none; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .how-steps::before { display: none; }
+  .how-steps { grid-template-columns: 1fr; gap: 36px; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
+  .compare-head, .compare-row { grid-template-columns: 1.5fr 1fr; }
+  .compare-head div:nth-child(3), .compare-row div:nth-child(3) { display: none; }
+  .products-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo">Orgi<span>Pro</span></div>
+      <div class="nav-links">
+        <a href="#why">Why OrgiPro</a>
+        <a href="#compare">Compare</a>
+        <a href="#science">Science</a>
+        <a href="#products">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#how">How It Works</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="section-label anim anim-d1">Pure &amp; Natural</span>
+          <h1 class="section-title anim anim-d2">MONK FRUIT, Sweetener<br>Nature <em>Intended</em></h1>
+          <p class="anim anim-d3">Experience the purest form of monk fruit sweetener — zero calories, zero compromise. Crafted for those who demand the best from nature.</p>
+          <div class="hero-buttons anim anim-d4">
+            
+          </div>
+          <div class="hero-badges anim anim-d4">
+            <div class="hero-badge"><div class="hero-badge-dot"></div><span>USDA Organic</span></div>
+            <div class="hero-badge"><div class="hero-badge-dot"></div><span>Non-GMO</span></div>
+            <div class="hero-badge"><div class="hero-badge-dot"></div><span>0 Calories</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img style="width: -webkit-fill-available;" src="images/monk2.jpg" alt="OrgiPro Monk Fruit Sweetener Bottle" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY ORGIPRO
+     ============================================================ -->
+<section class="why" id="why">
+  <div class="container">
+    <span class="section-label">Why Choose Us</span>
+    <h2 class="section-title">Why <em>OrgiPro</em> Stands Apart</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <h3>100% Pure Extract</h3>
+        <p>No fillers, no blends, no artificial additives. Just pure mogrosides extracted directly from the monk fruit.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌱</div>
+        <h3>Sustainably Sourced</h3>
+        <p>Partnered with certified organic farms in Guangxi province, ensuring ethical harvest and environmental stewardship.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">❤️</div>
+        <h3>Blood Sugar Friendly</h3>
+        <p>With a glycemic index of zero, OrgiPro is the ideal choice for diabetics and health-conscious individuals alike.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMPARISON TABLE
+     ============================================================ -->
+<section class="compare" id="compare">
+  <div class="container">
+    <span class="section-label">See the Difference</span>
+    <h2 class="section-title">How We <em>Compare</em></h2>
+    <div class="compare-table">
+      <div class="compare-head">
+        <div>Feature</div>
+        <div class="highlight-col">OrgiPro</div>
+        <div>Stevia</div>
+        <div>Sucralose</div>
+      </div>
+      <div class="compare-row">
+        <div>Calories Per Serving</div>
+        <div class="highlight-col"><span class="check">✓ 0 cal</span></div>
+        <div><span class="check">✓ 0 cal</span></div>
+        <div><span class="check">✓ 0 cal</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Glycemic Index</div>
+        <div class="highlight-col"><span class="check">✓ 0</span></div>
+        <div><span class="check">✓ 0</span></div>
+        <div><span class="cross">✗ Varies</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Natural Origin</div>
+        <div class="highlight-col"><span class="check">✓ Yes</span></div>
+        <div><span class="check">✓ Yes</span></div>
+        <div><span class="cross">✗ Synthetic</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Aftertaste</div>
+        <div class="highlight-col"><span class="check">✓ None</span></div>
+        <div><span class="cross">✗ Bitter</span></div>
+        <div><span class="cross">✗ Metallic</span></div>
+      </div>
+      <div class="compare-row">
+        <div>FDA GRAS Status</div>
+        <div class="highlight-col"><span class="check">✓ Yes</span></div>
+        <div><span class="check">✓ Yes</span></div>
+        <div><span class="check">✓ Yes</span></div>
+      </div>
+      <div class="compare-row">
+        <div>Suitable for Baking</div>
+        <div class="highlight-col"><span class="check">✓ Yes</span></div>
+        <div><span class="cross">✗ Limited</span></div>
+        <div><span class="check">✓ Yes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCIENCE
+     ============================================================ -->
+<section class="science" id="science">
+  <div class="science-bg-strip"></div>
+  <div class="science-overlay-strip"></div>
+  <div class="container">
+    <div class="science-grid">
+      <div class="science-text">
+        <span class="section-label">The Science</span>
+        <h2 class="section-title">Rooted in<br><em>Ancient Wisdom</em></h2>
+        <p>Monk fruit has been used in traditional Chinese medicine for centuries. Modern science has confirmed what monks knew long ago — mogrosides are a remarkable natural sweetener with extraordinary health properties.</p>
+        <ul class="science-list">
+          <li><div class="science-list-icon">🔬</div><div><strong>Mogrosides V</strong> — The primary active compound, 250–300× sweeter than sugar with zero caloric impact.</div></li>
+          <li><div class="science-list-icon">🧬</div><div><strong>Anti-inflammatory</strong> — Research shows mogrosides may help reduce oxidative stress and inflammation.</div></li>
+          <li><div class="science-list-icon">💚</div><div><strong>Gut-Friendly</strong> — Unlike many sweeteners, monk fruit does not disrupt your microbiome.</div></li>
+        </ul>
+      </div>
+      <div class="science-visual">
+        <div class="science-card">
+          <div class="science-card-header">
+            <div class="science-card-icon green">🌾</div>
+            <h4>Farm to Bottle</h4>
+          </div>
+          <p>Single-origin monk fruit harvested at peak ripeness from organic farms, cold-extracted to preserve potency.</p>
+        </div>
+        <div class="science-card">
+          <div class="science-card-header">
+            <div class="science-card-icon gold">⚗️</div>
+            <h4>Lab-Verified Purity</h4>
+          </div>
+          <p>Every batch undergoes third-party testing to ensure ≥98% mogrosides purity and zero contaminants.</p>
+        </div>
+        <div class="science-card">
+          <div class="science-card-header">
+            <div class="science-card-icon earth">🏭</div>
+            <h4>Clean Processing</h4>
+          </div>
+          <p>Water-based extraction with no solvents. The result is a crystal-clear sweetener with an exceptionally clean taste.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRODUCTS – UNIQUE IMAGE FRAMES
+     ============================================================ -->
+<section class="products" id="products">
+  <div class="products-bg"></div>
+  <div class="products-overlay"></div>
+  <div class="products-content">
+    <div class="container">
+      <span class="section-label">Our Range</span>
+      <h2 class="section-title">Find Your Perfect <em>Match</em></h2>
+      <div class="products-grid">
+
+        <!-- CARD 1: Tea Blend – Warm circular medallion frame -->
+        <div class="product-card">
+          <div class="product-image style-golden">
+           <div class="accent-corner"></div>
+            <div class="accent-corner-bl"></div>
+            
+            <img src="images/teablend.jpg" alt="Monk Fruit Tea Blend">
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Best Seller</span>
+            <h3>Monk Fruit Tea Blend</h3>
+            <p>A delightful fusion of premium green tea and monk fruit sweetener. Perfect for a calming daily ritual.</p>
+            <div class="product-price">$24.99 <span>/ 60 servings</span></div>
+           </div>
+        </div>
+
+        <!-- CARD 2: Golden Brown Blend – Diagonal gold-stripe cinematic frame -->
+        <div class="product-card">
+          <div class="product-image style-golden">
+            <div class="accent-corner"></div>
+            <div class="accent-corner-bl"></div>
+            <img src="images/teablend1.jpg" alt="Pure Golden Brown Blend Monk Fruit">
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Best Seller</span>
+            <h3>Monk Fruit Golden Brown Blend</h3>
+            <p>A delightful fusion of premium green tea and monk fruit sweetener. Perfect for a calming daily ritual.</p>
+            <div class="product-price">$24.99 <span>/ 60 servings</span></div>
+           </div>
+        </div>
+
+        <!-- CARD 3: Pure Granulated – Arch-window with dot pattern -->
+        <div class="product-card">
+          <div class="product-image style-golden">
+            <div class="accent-corner"></div>
+            <div class="accent-corner-bl"></div>
+            <img src="images/whitegranular.jpg" alt="Pure Granulated Monk Fruit">
+          
+          </div>
+          <div class="product-info">
+            <span class="product-tag">Most Popular</span>
+            <h3>Pure Granulated</h3>
+            <p>Our signature granulated sweetener — a 1:1 sugar substitute perfect for cooking, baking, and everyday use.</p>
+            <div class="product-price">$19.99 <span>/ 300g</span></div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Liquid Drops – Dark cinematic with amber light ray -->
+        <div class="product-card">
+          <div class="product-image style-golden">
+            <div class="frame-inset"></div>
+            <div class="accent-glow"></div>
+            <img src="images/liquiddrops.png" alt="Liquid Monk Fruit Drops">
+          </div>
+          <div class="product-info">
+            <span class="product-tag">New</span>
+            <h3>Liquid Drops</h3>
+            <p>Ultra-concentrated liquid sweetener. A few drops is all you need for coffee, smoothies, and beverages.</p>
+            <div class="product-price">$14.99 <span>/ 100ml</span></div>
+           </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BENEFITS
+     ============================================================ -->
+<section class="benefits" id="benefits">
+  <div class="container">
+    <span class="section-label">Health Benefits</span>
+    <h2 class="section-title">Good For Your <em>Body</em></h2>
+    <div class="benefits-grid">
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-number">01</div>
+          <div><h4>Zero Calorie Impact</h4><p>Enjoy sweetness without the caloric burden. Monk fruit passes through your body without being metabolized.</p></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">02</div>
+          <div><h4>Blood Sugar Stability</h4><p>With a glycemic index of 0, OrgiPro won't spike your blood sugar — ideal for diabetic-friendly diets.</p></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">03</div>
+          <div><h4>Antioxidant Properties</h4><p>Mogrosides have demonstrated antioxidant activity, helping protect cells from oxidative damage.</p></div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-number">04</div>
+          <div><h4>Digestive Harmony</h4><p>Unlike erythritol or xylitol, monk fruit sweetener is gentle on the digestive system for most people.</p></div>
+        </div>
+      </div>
+      <div class="benefits-visual">
+        <h3 class="benefits-visual-title">The Numbers Speak</h3>
+        <div class="benefits-ring">
+          <svg viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="72" fill="none" stroke="#e6f2e3" stroke-width="14"/>
+            <circle cx="90" cy="90" r="72" fill="none" stroke="#3d7a35" stroke-width="14" stroke-linecap="round" stroke-dasharray="452.4" stroke-dashoffset="45.2"/>
+          </svg>
+          <div class="benefits-ring-text">
+            <div class="benefits-ring-num">0</div>
+            <div class="benefits-ring-label">Glycemic Index</div>
+          </div>
+        </div>
+        <div class="benefits-facts">
+          <div class="benefit-fact">
+            <div class="benefit-fact-num">300×</div>
+            <div class="benefit-fact-label">Sweeter</div>
+          </div>
+          <div class="benefit-fact">
+            <div class="benefit-fact-num">0</div>
+            <div class="benefit-fact-label">Calories</div>
+          </div>
+          <div class="benefit-fact">
+            <div class="benefit-fact-num">98%</div>
+            <div class="benefit-fact-label">Purity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="how" id="how">
+  <div class="container">
+    <span class="section-label">Simple Process</span>
+    <h2 class="section-title">How It <em>Works</em></h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-circle">1</div>
+        <h3>Choose Your Product</h3>
+        <p>Browse our range of monk fruit sweeteners and select the one that fits your lifestyle and needs.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-circle">2</div>
+        <h3>Swap It In</h3>
+        <p>Replace sugar 1:1 in your recipes, beverages, or morning coffee. The taste is remarkably close to sugar.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-circle">3</div>
+        <h3>Enjoy the Difference</h3>
+        <p>Experience all the sweetness with none of the guilt. Feel the difference in your energy and wellbeing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2 class="section-title"> <em>About Monk Sweetner</em></h2>
+    <div class="video-wrapper reveal">
+      <div class="video-container">
+        <video 
+          controls 
+          muted
+          playsinline
+          preload="metadata"
+          class="main-video">
+          <source src="images/monkfruitvideo1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <span class="section-label">Ready?</span>
+    <h2 class="section-title">Start Your Journey<br>to <em>Sweeter Health</em></h2>
+    <p>Join over 50,000 happy customers who have already made the switch to the world's purest monk fruit sweetener.</p>
+    
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Orgi<span>Pro</span></div>
+        <p>Pure monk fruit sweetener crafted for those who refuse to compromise on taste or health. Nature's gift, perfected.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Monk Fruit Tea</a></li>
+          <li><a href="#">Pure Granulated</a></li>
+          <li><a href="#">Liquid Drops</a></li>
+          <li><a href="#">Gift Sets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 OrgiPro. All rights reserved.</span>
+      <span>Crafted with care for your health &amp; the planet 🌿</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
