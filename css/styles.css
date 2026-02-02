@@ -1103,7 +1103,36 @@ footer {
   top: 0; left: 0;
   width: 100%; height: 100%;
 }
+/* Navigation Cart Icon Styling */
+.nav-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* This ensures it uses your brand's deep green */
+  color: var(--green-deep) !important; 
+  transition: transform var(--transition), color var(--transition);
+  margin-left: 10px;
+}
 
+.nav-cart:hover {
+  /* Shifts to gold on hover for a luxury feel */
+  color: var(--gold) !important; 
+  transform: translateY(-2px);
+}
+
+.nav-cart::after {
+  display: none !important; /* Removes the underline animation from the icon */
+}
+
+/* Ensure the icon fits well on mobile */
+@media (max-width: 768px) {
+  .nav-cart {
+    margin-left: 0;
+    padding: 12px 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
 .modal-close {
   position: absolute;
   top: -50px;
